@@ -4,16 +4,14 @@ class Genre
 
     def initialize(name)
         @name = name
-        @songs = []
-        @artists = []
     end
 
     def songs
-        Song.all.each {|song| song.genre == self}
+        Song.all.select {|song| song.genre == self}
     end
 
     def artists
-        Song.all.each {|song| song.genre == self}
+        songs.map {|song| song.artist}
     end
 
 
