@@ -7,7 +7,7 @@ class Genre
     end
 
     def songs
-        
+        Songs.all.map {|song| song.genre == self}
     end
 
 
