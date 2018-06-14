@@ -9,7 +9,7 @@ class Genre
     end
 
     def songs
-        Song.all.map {|song| song.genre == self}
+        Song.all.each {|song| song.genre == self}
     end
 
     def artists
